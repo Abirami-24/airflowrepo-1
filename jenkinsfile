@@ -3,7 +3,7 @@ node{
      git 'https://github.com/Abirami-24/airflowrepo-1/'
      }
    stage('Deploy to airflow'){
-    sshagent(['jenkinskey']) {
+    sshagent(['privkey']) {
     sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/airflow_jenkins/*.py  ec2-user@174.129.230.154:/home/ec2-user/airflow/dags/'
      }
     
