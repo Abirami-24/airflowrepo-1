@@ -10,7 +10,8 @@ node{
     
     sh 'pwd'
     sh 'whoami'
-    sh 'ssh -t -i "jenkins.pem" ec2-user@ec2-52-91-5-185.compute-1.amazonaws.com'
+    
+    sh 'sshpass -p 'jenkins.pem' rsync -rvz -e ssh -o StrictHostKeyChecking=no -p 22 --progress ec2-user@52.91.5.185:/home/ec2-user/airflow/
     sh 'ls'
     sh 'pwd'
     
