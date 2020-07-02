@@ -9,7 +9,7 @@ node{
             //sh 'ssh -o StrictHostKeyChecking=no uptime'
             //sh 'ssh -v user@hostname.com'
             //sh 'scp ./source/filename user@hostname.com:/remotehost/target'
-            sh 'sshpass -p 'jen1.pem'  ssh -o StrictHostKeyChecking=no rsync -e 'ssh -i /home/ec2-user/pem/jen1.pem' ec2-user@52.91.5.185:home/ec2-user/'
+            sh 'sshpass   ssh -o StrictHostKeyChecking=no rsync -e 'ssh -i /home/ec2-user/pem/jen1.pem' ec2-user@52.91.5.185:home/ec2-user/'
             sh 'ls'
            
             
