@@ -3,8 +3,10 @@ node{
      git 'https://github.com/Abirami-24/airflowrepo-1/'
      }
    stage('Deploy to airflow'){
-    
+       
         sshagent(credentials : ['privkey']) {
+            sh 'rsync --rsh="sshpass -p jen1.pem ssh -o StrictHostKeyChecking=no -l ec2-user" ec2-user@52.91.5.185:home/ec2-user/airflow/'
+            sh 'ls'
             ssh ec2-user@52.91.5.185:home/ec2-user/airflow/
             sh 'ls'
             dir(ssh ec2-user@52.91.5.185:/home/ec2-user/airflow")
