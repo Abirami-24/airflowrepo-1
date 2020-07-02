@@ -18,6 +18,7 @@ node{
     sh 'ls'
     sh 'exit 0'
     }
+    sh 'exit'
     //sh 'rsync --rsh="sshpass -p 'jenkins.pem' ssh -o StrictHostKeyChecking=no -l ec2-user" ec2-user@52.91.5.185:/home/ec2-user/airflow/'
    // sh 'ls'
     //sh 'pwd'
