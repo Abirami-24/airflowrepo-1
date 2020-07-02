@@ -8,7 +8,10 @@ node{
         
             sh 'ssh -o StrictHostKeyChecking=no ec2-user@ec2-52-91-5-185.compute-1.amazonaws.com uptime'
             sh 'ssh -v  ec2-user@ec2-52-91-5-185.compute-1.amazonaws.com '
+            dir("/home/ec2-user/abirami/")
+            {
             sh 'ls'
+            }
         
     }
     }
