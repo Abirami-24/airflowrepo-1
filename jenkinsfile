@@ -11,9 +11,9 @@ node{
     sh 'pwd'
     sh 'whoami'
     dir("/home/ec2-user/pem/"){
-    sh 'chmod 400 jenkins.pem'
+    sh 'chmod 400 jen.pem'
     
-    sh 'ssh -tt -i "jenkins.pem" ec2-user@ec2-54-175-57-30.compute-1.amazonaws.com'
+    sh 'ssh  -i "jen.pem" ec2-user@ec2-54-175-57-30.compute-1.amazonaws.com'
     sh 'ls'
     }
     sh 'rsync --rsh="sshpass -p 'jenkins.pem' ssh -o StrictHostKeyChecking=no -l ec2-user" ec2-user@52.91.5.185:/home/ec2-user/airflow/'
