@@ -11,6 +11,7 @@ node{
     sh 'whoami'
     sh "echo ${currentBuild.number}"
     sh 'ssh -tt -i "jenkins.pem" ec2-user@ec2-54-175-57-30.compute-1.amazonaws.com'
+    sh 'cd /home/ec2-user/airflow'
     dir("/home/ec2-user/airflow/")
     {
     
