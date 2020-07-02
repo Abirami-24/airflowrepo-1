@@ -8,17 +8,8 @@ node{
             sh 'rsync --rsh="sshpass -p jen1.pem ssh -o StrictHostKeyChecking=no -l ec2-user" ec2-user@52.91.5.185:home/ec2-user/airflow/'
             sh 'ls'
            
-            dir(ssh ec2-user@52.91.5.185:/home/ec2-user/airflow")
-            {
-            sh 'ls'
-            }
-            sh 'ssh -o StrictHostKeyChecking=no ec2-user@ec2-52-91-5-185.compute-1.amazonaws.com uptime'
-            sh 'ssh -v  ec2-user@ec2-52-91-5-185.compute-1.amazonaws.com '
-            sh 'pwd'
-            dir("/home/ec2-user/abirami")
-            {
-            sh 'ls'
-            }
+            
+            
         
     }
     }
