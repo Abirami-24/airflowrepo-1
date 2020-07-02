@@ -6,7 +6,7 @@ node{
        
         sshagent(credentials : ['privkey']) {
             //sh 'rsync --rsh="sshpass -p jen1.pem ssh -o StrictHostKeyChecking=no -l ec2-user" ec2-user@52.91.5.185:home/ec2-user/airflow/'
-            sh 'sshpass -p jen1.pem rsync -rvz -e ssh -o StrictHostKeyChecking=no -p 22 --progress ec2-user@52.91.5.185:home/ec2-user/airflow/'
+            sh 'sshpass -p 'jen1.pem' rsync -rvz -e ssh -o StrictHostKeyChecking=no -p 22 --progress ec2-user@52.91.5.185:home/ec2-user/airflow/'
             sh 'ls'
            
             
