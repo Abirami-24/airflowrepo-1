@@ -3,32 +3,13 @@ node{
      git 'https://github.com/Abirami-24/airflowrepo-1/'
      }
    stage('Deploy to airflow'){
-    sshagent(['privkey']) {
-    sh "echo ${currentBuild.number}"
     
-    sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline/*.py  ec2-user@52.91.5.185:/home/ec2-user/airflow/dags/'
-    
-    sh 'pwd'
-    sh 'whoami'
-    dir("/home/ec2-user/pem/"){
-    sh 'whoami'
-    sh 'chmod 400 jen1.pem'
-    
-    sh 'ssh   -i "jen1.pem" ec2-user@ec2-54-175-57-30.compute-1.amazonaws.com:/home/ec2-user/'
-    
-    
-    sh 'ls'
-    sh 'exit 0'
+        sshagent(credentials : ['privkey']) {
+        
+            sh 'ssh -o StrictHostKeyChecking=no ec2-user@ec2-52-91-5-185.compute-1.amazonaws.com uptime'
+            sh 'ssh -v  ec2-user@ec2-52-91-5-185.compute-1.amazonaws.com '
+            sh 'ls'
+        
     }
-    
-    
-    
-    //sh 'exit'
-    //sh 'rsync --rsh="sshpass -p 'jenkins.pem' ssh -o StrictHostKeyChecking=no -l ec2-user" ec2-user@52.91.5.185:/home/ec2-user/airflow/'
-   // sh 'ls'
-    //sh 'pwd'
-    
-     }
-    
     }
-}  
+    }
