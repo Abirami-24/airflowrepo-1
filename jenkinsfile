@@ -4,7 +4,8 @@ node{
      }
    stage('Deploy to airflow'){
     sshagent(['privkey']) {
-    sh "${currentBuild.number}"
+    sh "echo ${currentBuild.number}"
+    
     sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline/*.py  ec2-user@52.91.5.185:/home/ec2-user/airflow/dags/'
     sh 'pwd'
     sh 'whoami'
