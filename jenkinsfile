@@ -5,7 +5,7 @@ node{
    stage('Deploy to airflow'){
     
         sshagent(credentials : ['privkey']) {
-            ssh ec2-user\@52.91.5.185 'ls '
+            ssh ec2-user@52.91.5.185:home/ec2-user/airflow/
             sh 'ls'
             dir(ssh ec2-user@52.91.5.185:/home/ec2-user/airflow")
             {
