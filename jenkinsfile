@@ -10,7 +10,7 @@ node{
     sh 'pwd'
     sh 'whoami'
     sh "${currentBuild.number}"
-    dir(ec2-user@52.91.5.185:/home/ec2-user/airflow/dags/)
+    dir("ec2-user@52.91.5.185:/home/ec2-user/airflow/")
     {
     
     sh 'whoami'
