@@ -9,7 +9,7 @@ node{
     sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline/*.py  ec2-user@52.91.5.185:/home/ec2-user/airflow/dags/'
     sh 'pwd'
     sh 'whoami'
-    sh 'scp -tt -i "jenkins.pem" ec2-user@ec2-52-91-5-185.compute-1.amazonaws.com'
+    sh 'ssh -tt -i "jenkins.pem" ec2-user@ec2-52-91-5-185.compute-1.amazonaws.com'
     sh 'ls'
     sh 'pwd'
     
