@@ -6,8 +6,11 @@ node{
     sshagent(['privkey']) {
     sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline/*.py  ec2-user@52.91.5.185:/home/ec2-user/airflow/dags/'
     sh 'pwd'
+    sh 'whoami'
     dir("/home/ec2-user/airflow/")
     {
+    
+    sh 'whoami'
     sh 'pwd'
     sh 'airflow webserver -p 8080 & airflow scheduler  && fg'
     
