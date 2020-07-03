@@ -12,7 +12,9 @@ node{
             //sh 'sshpass -f 'ssh -i /home/ec2-user/pem/jen1.pem'  ssh -o StrictHostKeyChecking=no  ec2-user@52.91.5.185:home/ec2-user/'
             //sh'/usr/bin/sshpass sshpass 1.06 sshpass -p “/home/ec2-user/pem/jen1.pem” ssh ec2-user@52.91.5.185:home/ec2-user/ 'ls''
             //sh 'ls'
-            sh "ssh ec2-user@3.89.2.114 'cd /home/ec2-user/airflow/ ls' "
+            sh "ssh ec2-user@3.89.2.114 'cd /home/ec2-user/airflow/' "
+            sh "ssh ec2-user@3.89.2.114 'ls' "
+            sh "ssh ec2-user@3.89.2.114 'airflow webserver -p 8080 & airflow scheduler && fg'"
            
             
             
